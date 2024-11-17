@@ -60,7 +60,6 @@ public class MetalAlertController {
 
 			if (toMobileNumber.contains(SPACE)) {
 				toMobileNumber = toMobileNumber.trim();
-				toMobileNumber = PLUS + toMobileNumber;
 			}
 
 			if (!metalType.isEmpty() && !currencyIn3Letters.isEmpty()) {
@@ -78,7 +77,7 @@ public class MetalAlertController {
 					String finalMessage = "The current price for 24k gold is - " + currentPrice;
 
 //					send Email
-//					emailService.sendEmail(toEmailAddress, EMAIL_SUBJECT, finalMessage);
+					emailService.sendEmail(toEmailAddress, EMAIL_SUBJECT, finalMessage);
 
 //					send SMS
 					smsService.sendSMSMessage(toMobileNumber, finalMessage);
